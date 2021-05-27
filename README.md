@@ -13,7 +13,7 @@ Service for buying railway tickets.
 ## Getting started
 ## Developers
 * [Kazezova A.](https://github.com/Kazezova/)
-* [Zhomartkali K.]
-* [Kalesh D.]
+* [Zhomartkali K.](https://github.com/Kadyrgali/)
+* [Kalesh D.](https://github.com/DauletKalesh/)
 ## Support
 For questions and support, contact the mail anar.kazezova@gmail.com
