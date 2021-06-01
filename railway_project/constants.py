@@ -1,0 +1,17 @@
+# Colors
+WHITE = '#FFFFFF'
+# MAIN_LIGHT = (200, 232, 166)  # green
+# MAIN_DARK = (86, 187, 7)  # green
+GRAY_LIGHT = '#DBDBDB'
+GRAY_DARK = (90, 90, 92)
+BACKGROUND = '#213142'
+SKY = '#0894A5'
+BLACK = '#000000'
+RED = '#D63A29'
+RED_LIGHT = '#F75B4A'
+
+# Fonts
+MAIN_FONT = 'Calibri'
+
+# Sizes
+SCREEN_SIZE = '400x600'
