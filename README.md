@@ -11,6 +11,24 @@ Service for buying railway tickets.
 * [MS SQL Server](https://www.microsoft.com/ru-ru/sql-server/sql-server-downloads/)
 * [SSMS](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15/)
 ## Getting started
+#### Clone the repository to your local machine:
+* `git clone https://github.com/Kazezova/railway-ticket.git`
+* `cd railway-ticket/railway_project`
+#### Install Python 3, if you don't have it installed:
+* https://www.python.org/downloads/
+#### Create and activate a virtual environment:
+> You can take this step using your preferred method.
+* `python3 -m venv env`
+* `env/Scripts/activate.bat.`
+#### Install necessary packages:
+* `pip install -r requirements.txt`
+#### Execute all .sql files, in order:
+* db.sql
+* procedures.sql
+* functions.sql
+* triggers.sql
+#### Run the interface module
+* python interface.py
 ## Developers
 * [Kazezova A.](https://github.com/Kazezova/)
 * [Zhomartkali K.](https://github.com/Kadyrgali/)
