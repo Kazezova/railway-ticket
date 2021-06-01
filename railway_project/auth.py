@@ -370,12 +370,12 @@ class Main:
         self.profile()
 
     def add_cash(self):
-        level = tk.Toplevel()
+        level = tk.Toplevel(bg=BACKGROUND)
         entry = tk.Entry(level)
-        entry.place(relx=0, rely=0, relwidth=1, relheight=0.5)
+        entry.place(relx=0.1, rely=0.1, relwidth=0.8, relheight=0.2)
 
-        btn = tk.Button(level, text='ok', command=partial(self.final_add_cash, entry))
-        btn.place(relx=0, rely=0.5, relwidth=1, relheight=0.5)
+        btn = tk.Button(level, text='ok', command=partial(self.final_add_cash, entry), bg=RED, fg=WHITE)
+        btn.place(relx=0.35, rely=0.4, relwidth=0.3, relheight=0.2)
 
     def profile(self):
         self.frame.forget()

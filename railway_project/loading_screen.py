@@ -4,6 +4,11 @@ from itertools import count, cycle
 
 
 class ImageLabel(tk.Label):
+    """
+    A Label that displays images, and plays them if they are gifs
+    :im: A PIL Image instance or a string filename
+    """
+
     def load(self, im):
         if isinstance(im, str):
             im = Image.open(im)
@@ -35,11 +40,17 @@ class ImageLabel(tk.Label):
         if self.frames:
             self.config(image=next(self.frames))
             self.after(self.delay, self.next_frame)
+        self.after(5000, root.destroy)
 
 
+
+# demo :
 root = tk.Tk()
 root.geometry('400x600')
+BACKGROUND = ("#213142")
+root.configure(background=BACKGROUND)
 lbl = ImageLabel(root)
 lbl.pack()
+time = 10
 lbl.load('map-icon-train-station.gif')
 root.mainloop()
