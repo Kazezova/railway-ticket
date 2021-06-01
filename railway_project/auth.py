@@ -477,7 +477,7 @@ class Main:
                      anchor='w').place(relx=0.45, rely=dy * 4, relwidth=0.55, relheight=0.05)
 
             discount_btn = tk.Button(self.frame, text='Купить дисконтную карту.',
-                                     command=partial(self.buy_card, self.user),
+                                     command=partial(self.buy_card),
                                      bg=RED, fg=WHITE)
             discount_btn.place(relx=0.45, rely=dy * 5, relwidth=0.5, relheight=0.05)
 
@@ -588,14 +588,15 @@ class Main:
         print(ticket_id)
         if tk.messagebox.askquestion(message='Вы точно хотите вернуть билет?') == 'no':
             return
-
         status = cursor.execute("EXEC ticket_return @ticket_id='%i'" % ticket_id).fetchone()[0]
         print(status)
-        return_price = [float(s) for s in status.split() if s.isdigit()][0]
-        cursor.execute(
-            "UPDATE pas_cash SET cash -= '%f', change='+' WHERE passenger_id='%i'" % (return_price, self.user))
-        cursor.commit()
-        tk.messagebox.showinfo('status', status)
+        if status:
+            print(status)
+            return_price = float(status.split()[6])
+            cursor.execute(
+                "UPDATE pas_cash SET cash -= '%f', change='+' WHERE passenger_id='%i'" % (return_price, self.user))
+            cursor.commit()
+            tk.messagebox.showinfo('status', status)
         Main.return_ticket(self)
 
     def return_ticket(self):
